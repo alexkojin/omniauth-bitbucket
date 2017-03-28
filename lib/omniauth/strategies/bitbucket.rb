@@ -11,6 +11,10 @@ module OmniAuth
         :token_url  => 'https://bitbucket.org/site/oauth2/access_token'
       }
 
+      def callback_url
+        full_host + script_name + callback_path
+      end
+
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
       # additional calls (if the user id is returned with the token
